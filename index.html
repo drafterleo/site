@@ -10,8 +10,11 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
-        <input type="text" v-model="title">
+        <div class="title">
+            <h1 class="centered">{{ title }}</h1>
+            <br/>
+            <input type="text" v-model="title" class="centered">
+        </div>
         <p class="poem" v-html="poem"></p>
     </div>
     

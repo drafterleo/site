@@ -3,6 +3,15 @@
     height: 100%;
 }
 
+.title {
+    width: 100%;
+}
+
+.centered {
+    display: table; 
+    margin: 0 auto; /* center */
+}
+
 .poem {
     /*position: absolute;*/
     position: absolute;
@@ -13,5 +22,6 @@
     padding: 5px;
     border: 1px solid black;
 
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
