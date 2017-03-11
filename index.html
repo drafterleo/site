@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="vue.js"></script>
+    <!-- <script src="vue.js"></script> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
         <input type="text" v-model="title">
+        <p class="poem" v-html="poem"></p>
     </div>
     
+    <script src="vue.js"></script>
     <script>
         new Vue ({
             el: '#app',
             data: {
-                title: 'Changeable Title'
+                title: 'Changeable Title',
+                poem: 'оксана жить не успевает </br>' +
+                      'поскольку много важных дел </br>' +
+                      'которые сперва закончи </br>' +
+                      'а уж потом уже живи'  
             }
         })
     </script>    
