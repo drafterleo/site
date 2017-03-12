@@ -31,8 +31,10 @@
         <button class="centered" v-on:click="increase(2, $event)">Click me!</button> <br/>
         <p class="centered">{{ counter }}</p> <br/>
 
-        <p class="centered" v-on:mouseMove="mouseCoordinates">Mouse coordinates: {{ mouseX }} / {{ mouseY }}</p>
-        <br/>
+        <p class="centered" v-on:mousemove="mouseCoordinates">
+            Mouse coordinates: {{ mouseX }} / {{ mouseY }}
+            - <span v-on:mousemove="dummy">DEAD SPOT</span>
+        </p> <br/>
 
         <p class="centered framed" v-html="poem"></p>
     </div>
@@ -66,6 +68,9 @@
                 mouseCoordinates: function (event) {
                     this.mouseX = event.clientX;
                     this.mouseY = event.clientY;     
+                },
+                dummy: function (event) {
+                    event.stopPropagation();
                 }
             }
         });
