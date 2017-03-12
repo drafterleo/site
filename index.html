@@ -28,7 +28,7 @@
             <p class="centered" v-html="htmlLink"></p>
         </div> <br/>
         
-        <button class="centered" v-on:click="increase">Click me!</button> <br/>
+        <button class="centered" v-on:click="increase(2, $event)">Click me!</button> <br/>
         <p class="centered">{{ counter }}</p> <br/>
 
         <p class="centered" v-on:mouseMove="mouseCoordinates">Mouse coordinates: {{ mouseX }} / {{ mouseY }}</p>
@@ -60,8 +60,8 @@
                 sayHello: function () {
                     return 'Hello from method!'
                 },
-                increase: function () {
-                    this.counter += 1;
+                increase: function (step, event) {
+                    this.counter += step;
                 },
                 mouseCoordinates: function (event) {
                     this.mouseX = event.clientX;
