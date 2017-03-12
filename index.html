@@ -13,20 +13,19 @@
 <body>
     <div id="app">
         <div class="title">
-            <h1 class="centered">{{ title }}</h1>
-            <br/>
+            <h1 class="centered">{{ title }}</h1> <br/>
             <input type="text" v-model="title" class="centered">
-        </div>
-        <br/>
+        </div> <br/>
+        
         <div class="title">
-            <h2 class="centered">{{ text }}</h2>
-            <br/>
+            <h2 class="centered">{{ text }}</h2> <br/>
             <input class="centered" type="text" v-on:input="changeText">
-        </div>
-        <br/>
+        </div> <br/>
+        
         <div class="tittle">
             <p class="centered">{{ sayHello() }}</p>
             <p class="centered"><a v-bind:href="link" target="_blank">Link to Google!</a></p>
+            <p class="centered" v-html="htmlLink"></p>
         </div>
 
         <p class="poem" v-html="poem"></p>
@@ -39,6 +38,7 @@
                 title: 'Changeable Title',
                 text: 'Changable by function',
                 link: 'http://google.com',
+                htmlLink: '<a href="http://ya.ru" target="_blank">Yandex</a>',
                 poem: 'оксана жить не успевает </br>' +
                       'поскольку много важных дел </br>' +
                       'которые сперва закончи </br>' +
