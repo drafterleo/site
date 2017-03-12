@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- <script src="vue.js"></script> -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app">
         <div class="title">
@@ -19,34 +21,39 @@
         <div class="title">
             <h2 class="centered">{{ text }}</h2>
             <br/>
-            <input class="centered" type="text" v-on:input="changeText" >
-        </div>    
+            <input class="centered" type="text" v-on:input="changeText">
+        </div>
+        <br/>
+        <div class="tittle">
+            <p class="centered">{{ sayHello() }}</p>
+        </div>
 
         <p class="poem" v-html="poem"></p>
-
     </div>
-    
+
     <script src="vue.js"></script>
     <script>
-        new Vue ({
+        new Vue({
             el: '#app',
             data: {
                 title: 'Changeable Title',
-                text:  'Changable by function',
+                text: 'Changable by function',
                 poem: 'оксана жить не успевает </br>' +
                       'поскольку много важных дел </br>' +
                       'которые сперва закончи </br>' +
-                      'а уж потом уже живи'  
+                      'а уж потом уже живи'
             },
             methods: {
                 changeText: function (event) {
                     this.text = event.target.value;
+                },
+                sayHello: function () {
+                    return 'Hello from method!'
                 }
             }
         })
-    </script>    
+    </script>
 
 </body>
+
 </html>
-
-
