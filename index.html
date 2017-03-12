@@ -32,7 +32,7 @@
         <p class="centered">{{ counter }}</p> <br/>
 
         <p class="centered" v-on:mousemove="mouseCoordinates">
-            Mouse coordinates: {{ mouseX }} / {{ mouseY }}
+            Mouse coordinates: {{ mouse.x }} / {{ mouse.y }}
             - <span v-on:mousemove.stop="">DEAD SPOT</span>
         </p> <br/>
 
@@ -52,8 +52,7 @@
                       'которые сперва закончи </br>' +
                       'а уж потом уже живи',
                 counter: 0,
-                mouseX: 0,
-                mouseY: 0,
+                mouse: {x: 0, y: 0},
             },
             methods: {
                 changeText: function (event) {
@@ -66,8 +65,8 @@
                     this.counter += step;
                 },
                 mouseCoordinates: function (event) {
-                    this.mouseX = event.clientX;
-                    this.mouseY = event.clientY;     
+                    this.mouse.x = event.clientX;
+                    this.mouse.y = event.clientY;     
                 },
             }
         });
