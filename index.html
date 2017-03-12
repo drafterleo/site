@@ -15,7 +15,15 @@
             <br/>
             <input type="text" v-model="title" class="centered">
         </div>
+        <br/>
+        <div class="title">
+            <h2 class="centered">{{ text }}</h2>
+            <br/>
+            <input class="centered" type="text" v-on:input="changeText" >
+        </div>    
+
         <p class="poem" v-html="poem"></p>
+
     </div>
     
     <script src="vue.js"></script>
@@ -24,12 +32,16 @@
             el: '#app',
             data: {
                 title: 'Changeable Title',
+                text:  'Changable by function',
                 poem: 'оксана жить не успевает </br>' +
                       'поскольку много важных дел </br>' +
                       'которые сперва закончи </br>' +
                       'а уж потом уже живи'  
             },
             methods: {
+                changeText: function (event) {
+                    this.text = event.target.value;
+                }
             }
         })
     </script>    
