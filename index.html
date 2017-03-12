@@ -33,7 +33,7 @@
 
         <p class="centered" v-on:mousemove="mouseCoordinates">
             Mouse coordinates: {{ mouseX }} / {{ mouseY }}
-            - <span v-on:mousemove="dummy">DEAD SPOT</span>
+            - <span v-on:mousemove.stop="">DEAD SPOT</span>
         </p> <br/>
 
         <p class="centered framed" v-html="poem"></p>
@@ -69,9 +69,6 @@
                     this.mouseX = event.clientX;
                     this.mouseY = event.clientY;     
                 },
-                dummy: function (event) {
-                    event.stopPropagation();
-                }
             }
         });
     </script>
