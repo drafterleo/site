@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- <script src="vue.js"></script> -->
     <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
 </head>
 
 <body>
@@ -26,18 +26,19 @@
         <br/>
         <div class="tittle">
             <p class="centered">{{ sayHello() }}</p>
+            <p class="centered"><a v-bind:href="link" target="_blank">Link to Google!</a></p>
         </div>
 
         <p class="poem" v-html="poem"></p>
     </div>
 
-    <script src="vue.js"></script>
     <script>
-        new Vue({
+        new Vue ({
             el: '#app',
             data: {
                 title: 'Changeable Title',
                 text: 'Changable by function',
+                link: 'http://google.com',
                 poem: 'оксана жить не успевает </br>' +
                       'поскольку много важных дел </br>' +
                       'которые сперва закончи </br>' +
@@ -51,7 +52,7 @@
                     return 'Hello from method!'
                 }
             }
-        })
+        });
     </script>
 
 </body>
