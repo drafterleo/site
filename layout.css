@@ -19,17 +19,7 @@ html, body {
     height: var(--header_height);
     top: 0px;
     left: 0px;
-    position: fixed;
     background-color: cornflowerblue;
-}
-
-.footer {
-    width: 100%; 
-    height: var(--footer_height);;
-    bottom: 0px;
-    left: 0px;
-    background-color: cornflowerblue;
-    position: fixed;
 }
 
 .middle {
@@ -40,10 +30,14 @@ html, body {
 }
 
 .content {
+    top: 0px;
     height: 100%;
     width: calc(100% - var(--sidebar_width));
-    background-color: green;
+    background-color: darkcyan;
     float: left;
+    color: black;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .sidebar {
@@ -51,4 +45,20 @@ html, body {
     width: var(--sidebar_width);
     background-color: lightskyblue;
     float: right;
+}
+
+.centered {
+    position: relative;
+    text-align: center;
+    vertical-align: center;
+    display: inline-block;
+}
+
+.footer {
+    width: 100%; 
+    height: var(--footer_height);;
+    bottom: 0px;
+    left: 0px;
+    background-color: cornflowerblue;
+    position: fixed;
 }
