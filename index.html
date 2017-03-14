@@ -40,7 +40,7 @@
             <p>Result: {{ result() }} | {{ output }} </p>
         </div>
 
-        <p class="centered" @mousemove="mouseCoordinates">
+        <p class="centered" @mousemove="mouseCoordinates"> <!-- "@" is shortcut of "v-on:"" -->
             Mouse coordinates: {{ mouse.x }} / {{ mouse.y }}
             - <span @mousemove.stop="">DEAD SPOT</span>
         </p> <br/>
