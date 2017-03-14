@@ -19,6 +19,10 @@
         <div class="demo"
              v-on:click="attachBlue = !attachBlue"
              v-bind:class="{blue: attachBlue}"></div>
+        <hr/>
+        <div class="demo" :class="[color, {red: attachRed}]"></div> <br/>
+        <label for="color_class">Name of the class:</label>
+        <input id='color_class' type="text" v-model="color">
     </div>
 
     <script>
@@ -28,6 +32,7 @@
                 attachRed: false,
                 attachGreen: false,
                 attachBlue: false,
+                color: 'green',
             }
         });
     </script>
