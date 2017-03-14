@@ -29,13 +29,15 @@
         </div> <br/>
         
         <div class="centered">
+            <button v-on:click="counter--">Decrease</button>
             <button v-on:click="counter++">Increase</button> 
-            <button v-on:click="counter--">Decrease</button> 
+            |
+            <button v-on:click="secondCounter++">Increase Second</button> 
         </div> <br/>
         
         <div class="centered">
-            <p>Counter: {{ counter }}</p>
-            <p>Result: {{ result() }}</p> <br/>
+            <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+            <p>Result: {{ result() }} | {{ output }} </p> <br/>
         </div> <br/>
 
         <p class="centered" v-on:mousemove="mouseCoordinates">
@@ -61,7 +63,14 @@
                       'которые сперва закончи </br>' +
                       'а уж потом уже живи',
                 counter: 0,
+                secondCounter: 0,
                 mouse: {x: 0, y: 0},
+            },
+            computed: {
+                output: function () {
+                    console.log('computed');
+                    return this.secondCounter > 10 ? ' > 10' : ' <= 10';    
+                }        
             },
             methods: {
                 changeText: function (event) {
@@ -73,6 +82,10 @@
                 increase: function (step, event) {
                     this.counter += step;
                 },
+                result: function () { // recalculated on DOM-update
+                    console.log('method'); 
+                    return this.counter > 10 ? ' > 10' : ' <= 10';    
+                },
                 mouseCoordinates: function (event) {
                     this.mouse.x = event.clientX;
                     this.mouse.y = event.clientY;     
@@ -80,9 +93,6 @@
                 alertMe: function (event) {
                     alert('Keyup Alert!');
                 },
-                result () {
-                    return this.counter > 10 ? ' > 10' : ' <= 10';    
-                }
             }
         });
     </script>
