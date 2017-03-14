@@ -36,6 +36,8 @@
             - <span v-on:mousemove.stop="">DEAD SPOT</span>
         </p> <br/>
 
+        <input type="text" class="centered" v-on:keyup.enter="alertMe"> </br>
+
         <p class="centered framed" v-html="poem"></p>
     </div>
 
@@ -65,9 +67,11 @@
                     this.counter += step;
                 },
                 mouseCoordinates: function (event) {
-                    var test;
                     this.mouse.x = event.clientX;
                     this.mouse.y = event.clientY;     
+                },
+                alertMe: function (event) {
+                    alert('Keyup Alert!');
                 },
             }
         });
