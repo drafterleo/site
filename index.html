@@ -29,11 +29,14 @@
         </div> <br/>
         
         <div class="centered">
-            <button v-on:click="increase(2, $event)">Click me!</button> <br/>
-            <button v-on:click="counter++">Click me JS-injected!</button> <br/>
-        </div>
-        <p class="centered">{{ counter > 10 ? 
-                               counter + ' > 10' : counter + ' <= 10' }}</p> <br/>
+            <button v-on:click="counter++">Increase</button> 
+            <button v-on:click="counter--">Decrease</button> 
+        </div> <br/>
+        
+        <div class="centered">
+            <p>Counter: {{ counter }}</p>
+            <p>Result: {{ result() }}</p> <br/>
+        </div> <br/>
 
         <p class="centered" v-on:mousemove="mouseCoordinates">
             Mouse coordinates: {{ mouse.x }} / {{ mouse.y }}
@@ -77,6 +80,9 @@
                 alertMe: function (event) {
                     alert('Keyup Alert!');
                 },
+                result () {
+                    return this.counter > 10 ? ' > 10' : ' <= 10';    
+                }
             }
         });
     </script>
