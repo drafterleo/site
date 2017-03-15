@@ -21,8 +21,17 @@
              v-bind:class="{blue: attachBlue}"></div>
         <hr/>
         <div class="demo" :class="[color, {red: attachRed}]"></div> <br/>
-        <label for="color_class">Name of the class:</label>
-        <input id='color_class' type="text" v-model="color">
+        <label for="color_inp">Name of class:</label>
+        <input id='color_inp' type="text" v-model="color">
+        <hr/>
+        <div class="demo" :style="{'background-color': anyColor, 
+                                   'width': anyWidth + 'px'}">
+        </div> <br/>
+        <label for="any_color_inp">Color:</label>
+        <input id='any_color_inp' type="text" v-model="anyColor">
+        <br/>
+        <label for="any_width_inp">Width:</label>
+        <input id='any_width_inp' type="text" v-model="anyWidth">
     </div>
 
     <script>
@@ -33,7 +42,14 @@
                 attachGreen: false,
                 attachBlue: false,
                 color: 'green',
-            }
+                anyColor: 'gray',
+                anyWidth: '50',
+            },
+            computed: {
+                myStyle: function () {
+                    backgroundColor: this.anyColor;
+                },
+            },
         });
     </script>
 </body>
